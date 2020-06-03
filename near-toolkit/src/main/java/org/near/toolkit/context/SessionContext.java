@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * session上下文，请求线程级别作用域
+ *
  * @author Created by Willard on 2015/9/7.
  */
 public class SessionContext {
@@ -21,6 +22,7 @@ public class SessionContext {
     /**
      * 将Session中存储的业务数据放到 SessionContext 工具类中直接访问，
      * 原理是使用线程变量ThreadLocal将参数存在来，同一个线程访问就可以获取到数据了。
+     *
      * @param sessionData Session数据模型 {@link SessionData}
      */
     public static void writeSessionContext(SessionData sessionData) {
@@ -46,12 +48,38 @@ public class SessionContext {
         writeSessionContext(sessionData);
     }
 
+    public static void setUserId(HttpSession session, String userId) {
+        SessionData sessionData = new SessionData();
+        sessionData.setUserId(userId);
+        session.setAttribute(USER_ID_KEY, userId);
+        writeSessionContext(sessionData);
+    }
+
+    public static void setOpenId(HttpSession session, String openId) {
+        SessionData sessionData = new SessionData();
+        sessionData.setOpenId(openId);
+        session.setAttribute(OPEN_ID_KEY, openId);
+        writeSessionContext(sessionData);
+    }
+
     /**
      * 清除ThreadLocal中存放的业务数据
      */
     public static void clearSessionContext() {
         ThreadCache.clear();
     }
+
+    public static boolean hasAttribute(String key) {
+        return ThreadCache.hasAttribute(key);
+    }
+
+    /**
+     * 移除属性，并且返回被移除的值
+     */
+    public static Object removeAttribute(String key) {
+        return ThreadCache.removeAttribute(key);
+    }
+
 
     /**
      * 获取 userId，会在拦截器 AuthInterceptor 中注入到线程变量
