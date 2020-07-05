@@ -1,17 +1,17 @@
 package org.near.webmvcsupport.view;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+
+
 import org.near.toolkit.model.ToString;
 
 /**
- * Created by Willard.Hu on 2016/5/20.
+ * @author Willard.Hu
+ * @date 2016/5/20
  */
-@Getter
-@Setter
+@Data
 public class PageForm extends ToString {
     private static final long serialVersionUID = 4926122193692891210L;
-    private int page = 1;
-    private int rows = 10;
-
+    protected int pageNum = 1;
+    protected int pageSize = 20;
 }
