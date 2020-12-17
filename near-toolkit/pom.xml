@@ -65,7 +65,7 @@
         </dependency>
     </dependencies>
 
-    <repositories>
+   <!--  <repositories>
         <repository>
             <id>releases</id>
             <url>http://nexus.grkfcs.cn/nexus/content/repositories/releases/</url>
@@ -96,7 +96,7 @@
             <id>snapshots</id>
             <url>http://nexus.grkfcs.cn/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
-    </distributionManagement>
+    </distributionManagement> -->
 
     <build>
         <plugins>
