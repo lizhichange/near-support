@@ -90,8 +90,8 @@ public class AjaxResult extends HashMap<String, Object> {
      *
      * @return 成功消息
      */
-    public static com.ruoyi.web.model.AjaxResult success() {
-        return com.ruoyi.web.model.AjaxResult.success("操作成功");
+    public static AjaxResult success() {
+        return AjaxResult.success("操作成功");
     }
 
     /**
@@ -99,8 +99,8 @@ public class AjaxResult extends HashMap<String, Object> {
      *
      * @return 成功消息
      */
-    public static com.ruoyi.web.model.AjaxResult success(Object data) {
-        return com.ruoyi.web.model.AjaxResult.success("操作成功", data);
+    public static AjaxResult success(Object data) {
+        return AjaxResult.success("操作成功", data);
     }
 
     /**
@@ -109,8 +109,8 @@ public class AjaxResult extends HashMap<String, Object> {
      * @param msg 返回内容
      * @return 成功消息
      */
-    public static com.ruoyi.web.model.AjaxResult success(String msg) {
-        return com.ruoyi.web.model.AjaxResult.success(msg, null);
+    public static AjaxResult success(String msg) {
+        return AjaxResult.success(msg, null);
     }
 
     /**
@@ -120,8 +120,8 @@ public class AjaxResult extends HashMap<String, Object> {
      * @param data 数据对象
      * @return 成功消息
      */
-    public static com.ruoyi.web.model.AjaxResult success(String msg, Object data) {
-        return new com.ruoyi.web.model.AjaxResult(Type.SUCCESS, msg, data);
+    public static AjaxResult success(String msg, Object data) {
+        return new AjaxResult(Type.SUCCESS, msg, data);
     }
 
     /**
@@ -130,8 +130,8 @@ public class AjaxResult extends HashMap<String, Object> {
      * @param msg 返回内容
      * @return 警告消息
      */
-    public static com.ruoyi.web.model.AjaxResult warn(String msg) {
-        return com.ruoyi.web.model.AjaxResult.warn(msg, null);
+    public static AjaxResult warn(String msg) {
+        return AjaxResult.warn(msg, null);
     }
 
     /**
@@ -141,8 +141,8 @@ public class AjaxResult extends HashMap<String, Object> {
      * @param data 数据对象
      * @return 警告消息
      */
-    public static com.ruoyi.web.model.AjaxResult warn(String msg, Object data) {
-        return new com.ruoyi.web.model.AjaxResult(Type.WARN, msg, data);
+    public static AjaxResult warn(String msg, Object data) {
+        return new AjaxResult(Type.WARN, msg, data);
     }
 
     /**
@@ -150,8 +150,8 @@ public class AjaxResult extends HashMap<String, Object> {
      *
      * @return
      */
-    public static com.ruoyi.web.model.AjaxResult error() {
-        return com.ruoyi.web.model.AjaxResult.error("操作失败");
+    public static AjaxResult error() {
+        return AjaxResult.error("操作失败");
     }
 
     /**
@@ -160,8 +160,8 @@ public class AjaxResult extends HashMap<String, Object> {
      * @param msg 返回内容
      * @return 警告消息
      */
-    public static com.ruoyi.web.model.AjaxResult error(String msg) {
-        return com.ruoyi.web.model.AjaxResult.error(msg, null);
+    public static AjaxResult error(String msg) {
+        return AjaxResult.error(msg, null);
     }
 
     /**
@@ -171,7 +171,7 @@ public class AjaxResult extends HashMap<String, Object> {
      * @param data 数据对象
      * @return 警告消息
      */
-    public static com.ruoyi.web.model.AjaxResult error(String msg, Object data) {
-        return new com.ruoyi.web.model.AjaxResult(Type.ERROR, msg, data);
+    public static AjaxResult error(String msg, Object data) {
+        return new AjaxResult(Type.ERROR, msg, data);
     }
 }
