@@ -10,6 +10,9 @@ import java.util.function.Supplier;
  */
 public final class LambdaExceptionUtil {
 
+    private LambdaExceptionUtil() {
+    }
+
     @FunctionalInterface
     public interface ConsumerWithExceptions<T, E extends Exception> {
         /**
@@ -109,6 +112,8 @@ public final class LambdaExceptionUtil {
 
     /**
      * uncheck(() -> Class.forName("xxx"));
+     *
+     * @param t
      */
     public static void uncheck(RunnableWithExceptions t) {
         try {
