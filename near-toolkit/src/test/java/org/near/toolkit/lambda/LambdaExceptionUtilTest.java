@@ -53,6 +53,11 @@ public class LambdaExceptionUtilTest extends TestCase {
 
     @Test(expected = ClassNotFoundException.class)
     public void testIfCorrectExceptionIsStillThrownByMethod() {
-        Class clazz3 = uncheck(Class::forName, "INVALID");
+        try {
+            Class clazz3 = uncheck(Class::forName, "INVALID");
+
+        } catch (Exception ignored) {
+
+        }
     }
 }
