@@ -4,6 +4,7 @@ import org.near.toolkit.model.ToString;
 
 /**
  * 用户Session中存放的数据模型
+ *
  * @author Willard.Hu on 2016/8/23 0023.
  */
 public class SessionData extends ToString {
@@ -11,9 +12,19 @@ public class SessionData extends ToString {
     /**
      * 用户唯一标识
      */
-    private String            userId;
+    private String userId;
 
-    private String            openId;
+    private String openId;
+
+    public String getHostAdd() {
+        return hostAdd;
+    }
+
+    public void setHostAdd(String hostAdd) {
+        this.hostAdd = hostAdd;
+    }
+
+    public String hostAdd;
 
     public String getOpenId() {
         return openId;
